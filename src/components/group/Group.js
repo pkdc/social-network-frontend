@@ -94,7 +94,7 @@ function Group(props) {
 
         console.log(data)
 
-        fetch('http://localhost:8080/group-request',
+        fetch('https://notfacebook-b2511391168d.herokuapp.com/group-request',
             {
                 method: 'POST',
                 credentials: "include",

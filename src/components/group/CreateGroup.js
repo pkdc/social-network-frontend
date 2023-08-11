@@ -41,7 +41,7 @@ function CreateGroup(props) {
         setTitle('');
         setDescription('');
     
-        fetch('http://localhost:8080/group', {
+        fetch('https://notfacebook-b2511391168d.herokuapp.com/group', {
             method: 'POST',
             credentials: "include",
             mode: "cors",

@@ -28,7 +28,7 @@ function  CreateGroupPost(props) {
         props.onCreatePost(data)
 
 
-        // fetch('http://localhost:8080/group-post',
+        // fetch('https://notfacebook-b2511391168d.herokuapp.com/group-post',
         // {
         //     method: 'POST',
         //     credentials: "include",
@@ -43,7 +43,7 @@ function  CreateGroupPost(props) {
 
         //     if (data.success) {
         //         // render all posts
-        //         fetch(`http://localhost:8080/group-post?groupid=${props.groupid}`)
+        //         fetch(`https://notfacebook-b2511391168d.herokuapp.com/group-post?groupid=${props.groupid}`)
         //         .then(resp => {
         //             return resp.json();
         //         })

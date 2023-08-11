@@ -18,9 +18,9 @@ import AllUsers from "../posts/allUsers";
 import refreshImg from "../assets/refresh.svg"
 
 const PostsPage = () => {
-    const sessionUrl = "http://localhost:8080/session";
-    // const postUrl = "http://localhost:8080/post";
-    const postCommentUrl = "http://localhost:8080/post-comment";
+    const sessionUrl = "https://notfacebook-b2511391168d.herokuapp.com/session";
+    // const postUrl = "https://notfacebook-b2511391168d.herokuapp.com/post";
+    const postCommentUrl = "https://notfacebook-b2511391168d.herokuapp.com/post-comment";
     const [postData, setPostData] = useState([]);
     const [commentData, setCommentData] = useState([]);
     const [refreshState, setRefreshState] = useState(false)
@@ -29,7 +29,7 @@ const PostsPage = () => {
     let userId = localStorage.getItem("user_id")
     console.log(userId)
     useEffect(() => {
-        fetch(`http://localhost:8080/post?id=${userId}`)
+        fetch(`https://notfacebook-b2511391168d.herokuapp.com/post?id=${userId}`)
             .then(resp => resp.json())
             .then(data => {
                 console.log("data23434re: ", data)
@@ -63,13 +63,13 @@ const PostsPage = () => {
             method: "POST",
             body: JSON.stringify(createPostPayloadObj)
         };
-        fetch(`http://localhost:8080/post`, reqOptions)
+        fetch(`https://notfacebook-b2511391168d.herokuapp.com/post`, reqOptions)
             .then(resp => resp.json())
             .then(data => {
                 console.log("post success", data.success);
                 if (data.success) {
                     // render all posts
-                    fetch(`http://localhost:8080/post?id=${userId}`)
+                    fetch(`https://notfacebook-b2511391168d.herokuapp.com/post?id=${userId}`)
                         .then(resp => {
                             return resp.json();
                         })

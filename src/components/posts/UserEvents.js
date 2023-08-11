@@ -8,7 +8,7 @@ function UserEvents({ userId, refresh }) {
     const [eventData, setEventData] = useState([])
 
     useEffect(() => {
-        fetch(`http://localhost:8080/group-event-member?userid=${userId}`)
+        fetch(`https://notfacebook-b2511391168d.herokuapp.com/group-event-member?userid=${userId}`)
             .then(resp => resp.json())
             .then(data => {
                 console.log("showtime", data)
