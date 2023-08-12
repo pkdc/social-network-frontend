@@ -27,8 +27,8 @@ export const JoinedGroupContextProvider = (props) => {
     const [joinedGrps, setJoinedGrps] = useState([]);
     // const [joinedGrpsChat, setJoinedGrpsChat] = useState([]);
     const [requestedGroups, setRequestedGroups] = useState([]);
-    const joinedGroupingUrl = `https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/group-member?userid=${selfId}`;
-    const requestedGroupUrl = `https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/group-request-by-user?id=${selfId}`;
+    const joinedGroupingUrl = `https://notfacebook-b2511391168d.herokuapp.com/group-member?userid=${selfId}`;
+    const requestedGroupUrl = `https://notfacebook-b2511391168d.herokuapp.com/group-request-by-user?id=${selfId}`;
     const wsCtx = useContext(WebSocketContext);
 
     // get from db
@@ -76,7 +76,7 @@ export const JoinedGroupContextProvider = (props) => {
             try {
                 const promises = [
                     fetchGroupChatData(joinedGroupingUrl),
-                    fetchGroupChatData(`https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/group-chat-item?userid=${selfId}`),
+                    fetchGroupChatData(`https://notfacebook-b2511391168d.herokuapp.com/group-chat-item?userid=${selfId}`),
                 ];
                 const result = await Promise.all(promises);
 
