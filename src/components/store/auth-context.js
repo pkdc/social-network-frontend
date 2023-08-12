@@ -38,7 +38,7 @@ export const AuthContextProvider = (props) => {
 
     const reqOptions = {
       method: "POST",
-      credentials: "include",
+      // credentials: "include",
       mode: "cors",
       headers: {
         'Content-Type': 'application/json'
@@ -105,7 +105,7 @@ export const AuthContextProvider = (props) => {
 
     const reqOptions = {
       method: "POST",
-      credentials: "include",
+      // credentials: "include",
       mode: "cors",
       headers: {
         'Content-Type': 'application/json'
