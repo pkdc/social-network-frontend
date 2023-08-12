@@ -94,7 +94,7 @@ function Group(props) {
 
         console.log(data)
 
-        fetch('https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/group-request',
+        fetch('https://notfacebook-b2511391168d.herokuapp.com/group-request',
             {
                 method: 'POST',
                 credentials: "include",

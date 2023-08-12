@@ -10,7 +10,7 @@ import axios from "axios";
 //   useEffect(() => {
 //     console.log("useGet: Starting fetch for", url);
 //     setIsLoading(true);
-//     fetch(`https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com${url}`)
+//     fetch(`https://notfacebook-b2511391168d.herokuapp.com${url}`)
 //       .then(response => {
 //         console.log("useGet: Received response:", response);
 //         return response.json();
@@ -41,7 +41,7 @@ import axios from "axios";
 //     useEffect(() => {
 //       console.log("useGet: ");
 //         setIsLoading(true)
-//         fetch(`https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com${url}`)
+//         fetch(`https://notfacebook-b2511391168d.herokuapp.com${url}`)
 //         .then(response => {
 //           console.log("useGet: ",data);
 //           return response.json()
@@ -77,7 +77,7 @@ import axios from "axios";
 //         if (!url) return;
 //         const fetchData = async () => {
 //             setStatus('fetching');
-//             const response = await fetch(`https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com${url}`);
+//             const response = await fetch(`https://notfacebook-b2511391168d.herokuapp.com${url}`);
 //             const data = await response.json();
 //             setData(data);
 //             setStatus('fetched');
@@ -100,7 +100,7 @@ const useGet = url => {
   useEffect(() => {
     const fetchData = () => {
       axios
-        .get( `https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com${url}`, { withCredentials: true })
+        .get( `https://notfacebook-b2511391168d.herokuapp.com${url}`, { withCredentials: true })
         .then(response => {
           setIsLoaded(true);
           setData(response.data);

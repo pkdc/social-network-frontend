@@ -19,7 +19,7 @@ function GroupPost(props) {
         !showComments && setShowComments(true);
         showComments && setShowComments(false);
 
-        fetch(`https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/group-post-comment?id=${e.target.id}`)
+        fetch(`https://notfacebook-b2511391168d.herokuapp.com/group-post-comment?id=${e.target.id}`)
             .then(resp => resp.json())
             .then(data => {
                 setCommentData(data.data);
@@ -36,7 +36,7 @@ function GroupPost(props) {
             method: "POST",
             body: JSON.stringify(createCommentPayloadObj),
         }
-        fetch("https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/group-post-comment", reqOptions)
+        fetch("https://notfacebook-b2511391168d.herokuapp.com/group-post-comment", reqOptions)
             .then(resp => resp.json())
             .then(data => {
                 createCommentSuccessHandler(data.success);
@@ -51,7 +51,7 @@ function GroupPost(props) {
         console.log({createCommentSuccessful})
         console.log("props id: ", props.id)
         if (createCommentSuccessful) {
-        fetch(`https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/group-post-comment?id=${props.id}`)
+        fetch(`https://notfacebook-b2511391168d.herokuapp.com/group-post-comment?id=${props.id}`)
             .then(resp => resp.json())
             .then(data => {
                 console.log("post page raw comment data: ", data.data)
