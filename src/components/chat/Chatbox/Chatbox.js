@@ -13,8 +13,8 @@ const Chatbox = (props) => {
 
     console.log("chatbox props", props)
 
-    const userMsgUrl = "https://notfacebook-b2511391168d.herokuapp.com/user-message";
-    const groupMsgUrl = "https://notfacebook-b2511391168d.herokuapp.com/group-message";
+    const userMsgUrl = "https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/user-message";
+    const groupMsgUrl = "https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/group-message";
 
     const [oldMsgData, setOldMsgData] = useState([]);
     const [newMsgsData, setNewMsgs] = useState([]);

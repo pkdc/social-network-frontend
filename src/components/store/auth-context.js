@@ -21,9 +21,9 @@ export const AuthContextProvider = (props) => {
   const [regSuccess, setRegSuccess] = useState(false);
   const [notif, setNotif] = useState([])
   const [errMsg, setErrMsg] = useState("");
-  const loginURL = "https://notfacebook-b2511391168d.herokuapp.com/login";
-  const regURL = "https://notfacebook-b2511391168d.herokuapp.com/reg";
-  const logoutURL = "https://notfacebook-b2511391168d.herokuapp.com/logout";
+  const loginURL = "https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/login";
+  const regURL = "https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/reg";
+  const logoutURL = "https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/logout";
 
   const usersCtx = useContext(UsersContext);
 
