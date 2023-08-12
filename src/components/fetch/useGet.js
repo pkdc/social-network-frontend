@@ -9,7 +9,7 @@ function useGet(url) {
   useEffect(() => {
     console.log("useGet: Starting fetch for", url);
     setIsLoading(true);
-    fetch(`https://notfacebook-b2511391168d.herokuapp.com${url}`, {credentials: "include"})
+    fetch(`https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com${url}`, {credentials: "include"})
       .then(response => {
         console.log("useGet: Received response:", response);
         return response.json();

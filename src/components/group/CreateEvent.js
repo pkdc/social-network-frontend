@@ -40,7 +40,7 @@ function CreateEvent( {groupid, newEvent} ) {
         setDescription('');
         setDate('');
     
-        fetch('https://notfacebook-b2511391168d.herokuapp.com/group-event', 
+        fetch('https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/group-event', 
         {
             
             method: 'POST',

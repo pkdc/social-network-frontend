@@ -19,7 +19,7 @@ export const UsersContextProvider = (props) => {
 
     // get users
     const getUsersHandler = () => {
-        const userUrl = "https://notfacebook-b2511391168d.herokuapp.com/user";
+        const userUrl = "https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/user";
         fetch(userUrl)
         .then(resp => resp.json())
         .then(data => {

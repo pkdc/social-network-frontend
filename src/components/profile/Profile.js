@@ -92,7 +92,7 @@ function Profile({ userId }) {
             body: JSON.stringify(data)
         };
 
-        fetch('https://notfacebook-b2511391168d.herokuapp.com/user-follower', reqOptions)
+        fetch('https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/user-follower', reqOptions)
             .then(resp => resp.json())
             .then(data => {
                 console.log("user follower data", data);
@@ -186,7 +186,7 @@ function Profile({ userId }) {
             public: publicityNum,
         };
 
-        fetch('https://notfacebook-b2511391168d.herokuapp.com/privacy',
+        fetch('https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/privacy',
             {
                 method: 'POST',
                 credentials: "include",
@@ -202,7 +202,7 @@ function Profile({ userId }) {
 
 
     useEffect(() => {
-        fetch(`https://notfacebook-b2511391168d.herokuapp.com/user-follow-status?tid=${userId}&sid=${currUserId}`)
+        fetch(`https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/user-follow-status?tid=${userId}&sid=${currUserId}`)
             .then(response => response.text())
             .then(data => {
                 console.log("cf: ", data)
@@ -226,7 +226,7 @@ function Profile({ userId }) {
 
     //Get followers
     useEffect(() => {
-        fetch(`https://notfacebook-b2511391168d.herokuapp.com/user-follower?id=${userId}`)
+        fetch(`https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/user-follower?id=${userId}`)
             .then(resp => resp.json())
             .then(data => {
                 setFollowerData(data.data)
@@ -238,7 +238,7 @@ function Profile({ userId }) {
 
     //Get following
     useEffect(() => {
-        fetch(`https://notfacebook-b2511391168d.herokuapp.com/user-following?id=${userId}`)
+        fetch(`https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/user-following?id=${userId}`)
             .then(resp => resp.json())
             .then(data => {
                 setFollowingData(data.data)
@@ -281,7 +281,7 @@ function Profile({ userId }) {
             body: JSON.stringify(data)
         };
 
-        fetch('https://notfacebook-b2511391168d.herokuapp.com/user-follower', reqOptions)
+        fetch('https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/user-follower', reqOptions)
             .then(resp => resp.json())
             .then(data => {
                 console.log(data);
@@ -318,7 +318,7 @@ function Profile({ userId }) {
             body: JSON.stringify(data)
         };
 
-        fetch('https://notfacebook-b2511391168d.herokuapp.com/close-friend', cfOptions)
+        fetch('https://cors-anywhere.herokuapp.com/https://notfacebook-b2511391168d.herokuapp.com/close-friend', cfOptions)
             .then(resp => resp.json())
             .then(data => {
                 console.log("closefriend event: ", data);
