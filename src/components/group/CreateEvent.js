@@ -40,7 +40,7 @@ function CreateEvent( {groupid, newEvent} ) {
         setDescription('');
         setDate('');
     
-        fetch('https://notfacebook-b2511391168d.herokuapp.com/group-event', 
+        fetch('http://localhost:8080/group-event', 
         {
             
             method: 'POST',

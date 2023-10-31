@@ -19,7 +19,7 @@ export const UsersContextProvider = (props) => {
 
     // get users
     const getUsersHandler = () => {
-        const userUrl = "https://notfacebook-b2511391168d.herokuapp.com/user";
+        const userUrl = "http://localhost:8080/user";
         fetch(userUrl)
         .then(resp => resp.json())
         .then(data => {

@@ -22,7 +22,7 @@ function Post(props) {
 
     // console.log("comment for post: ", props.postNum, " comments: ", props.commentsForThisPost)
     // const onlineStatus = false;
-    const postCommentUrl = "https://notfacebook-b2511391168d.herokuapp.com/post-comment";
+    const postCommentUrl = "http://localhost:8080/post-comment";
 
     // return <div className={classes.container}>
     const showCommentsHandler = useCallback(() => {

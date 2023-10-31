@@ -1,52 +1,72 @@
 import Post from "./Post";
-
-import classes from './AllPosts.module.css'
+import classes from "./AllPosts.module.css";
 import useGet from "../fetch/useGet";
 import { useCallback, useEffect } from "react";
 
-function AllPosts(props) {
+const AllPosts = ({
+	posts,
+	comments,
+	onCreateCommentSuccessful,
+	isLoadingPost,
+}) => {
+	//userId
+	// const { data } = useGet(`/posts`)
+	// console.log("out", comments);
+	let eachPostCommentsArr = [];
 
-    //props.userId
+	let noPostMsg = <h3>Loading...</h3>;
+	if (!isLoadingPost) noPostMsg = <h3>No Posts Yet...</h3>;
+	// useEffect(() => setPosts(posts), [posts]);
 
-    // const { data } = useGet(`/posts`)
-    // console.log("out", props.comments);
-    let eachPostCommentsArr = [];
+	if (posts)
+		for (let i = 0; i < posts.length; i++) {
+			let thisPostComments = [];
+			for (let j = 0; j < comments.length; j++) {
+				comments[j] &&
+					comments[j].postid === posts[i].id &&
+					thisPostComments.push(comments[j]);
+			}
+			eachPostCommentsArr.push(thisPostComments);
+		}
+	// console.log("eachPostComments", eachPostCommentsArr);
 
-    for (let i = 0; i < props.posts.length; i++) {
-        let thisPostComments = [];
-        for (let j = 0; j < props.comments.length; j++) {
-            props.comments[j] && props.comments[j].postid === props.posts[i].id && thisPostComments.push(props.comments[j]);
-        }
-        eachPostCommentsArr.push(thisPostComments);        
-    }
-    // console.log("eachPostComments", eachPostCommentsArr);
- 
-    const createCommentSuccessHandler = useCallback((createCommentSuccessful) => {
-        // lift it up to PostPage
-        props.onCreateCommentSuccessful(createCommentSuccessful)
-    },[props.onCreateCommentSuccessful]);
+	const createCommentSuccessHandler = useCallback(
+		(createCommentSuccessful) => {
+			// lift it up to PostPage
+			onCreateCommentSuccessful(createCommentSuccessful);
+		},
+		[onCreateCommentSuccessful]
+	);
 
-    return <div className={classes.container}>
-        {props.posts.map((post, p) => (
-         <Post
-            key={post.id}
-            id={post.id}
-            avatar={post.avatar}
-            fname={post.fname}
-            lname={post.lname}
-            nname={post.nname}
-            message={post.message}
-            image={post.image}
-            createdat={post.createdat}
-            authorId={post.author}
-            privacy= {post.privacy}
-            // totalNumPost={props.posts.length}
-            postNum={p}
-            commentsForThisPost={eachPostCommentsArr[p]}
-            onCreateCommentSuccessful={createCommentSuccessHandler}
-        />
-        ))}
-    </div>
-}
+	return (
+		<>
+			{!posts ? (
+				noPostMsg
+			) : (
+				<div className={classes.container}>
+					{posts.map((post, p) => (
+						<Post
+							key={post.id}
+							id={post.id}
+							avatar={post.avatar}
+							fname={post.fname}
+							lname={post.lname}
+							nname={post.nname}
+							message={post.message}
+							image={post.image}
+							createdat={post.createdat}
+							authorId={post.author}
+							privacy={post.privacy}
+							// totalNumPost={posts.length}
+							postNum={p}
+							commentsForThisPost={eachPostCommentsArr[p]}
+							onCreateCommentSuccessful={createCommentSuccessHandler}
+						/>
+					))}
+				</div>
+			)}
+		</>
+	);
+};
 
 export default AllPosts;
