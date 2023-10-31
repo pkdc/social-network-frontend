@@ -19,7 +19,7 @@ function GroupProfilePage() {
 
 	useEffect(() => {
 		fetch(
-			`http://https://notfacebook-b2511391168d.herokuapp.com/group-post?groupid=${id}`
+			`https://notfacebook-b2511391168d.herokuapp.com/group-post?groupid=${id}`
 		)
 			.then((resp) => {
 				return resp.json();
@@ -38,7 +38,7 @@ function GroupProfilePage() {
 	}
 
 	function onCreatePostHandler(postData) {
-		fetch("http://https://notfacebook-b2511391168d.herokuapp.com/group-post", {
+		fetch("https://notfacebook-b2511391168d.herokuapp.com/group-post", {
 			method: "POST",
 			credentials: "include",
 			mode: "cors",
@@ -50,7 +50,7 @@ function GroupProfilePage() {
 			console.log("posted");
 
 			fetch(
-				`http://https://notfacebook-b2511391168d.herokuapp.com/group-post?groupid=${id}`
+				`https://notfacebook-b2511391168d.herokuapp.com/group-post?groupid=${id}`
 			)
 				.then((resp) => {
 					return resp.json();

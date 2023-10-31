@@ -9,7 +9,7 @@ function AllGroups(props) {
 		async function fetchData() {
 			try {
 				const response = await fetch(
-					`http://https://notfacebook-b2511391168d.herokuapp.com/group`
+					`https://notfacebook-b2511391168d.herokuapp.com/group`
 				);
 				const data = await response.json();
 				console.log("fklgkdlf", data.data);

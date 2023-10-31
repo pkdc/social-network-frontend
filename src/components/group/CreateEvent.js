@@ -41,7 +41,7 @@ function CreateEvent({ groupid, newEvent }) {
 		setDescription("");
 		setDate("");
 
-		fetch("http://https://notfacebook-b2511391168d.herokuapp.com/group-event", {
+		fetch("https://notfacebook-b2511391168d.herokuapp.com/group-event", {
 			method: "POST",
 			credentials: "include",
 			mode: "cors",

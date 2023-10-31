@@ -9,7 +9,7 @@ function AllEvents({ groupid, refresh }) {
 		async function fetchData() {
 			try {
 				const response = await fetch(
-					`http://https://notfacebook-b2511391168d.herokuapp.com/group-event?id=${groupid}&userid=${userid}`
+					`https://notfacebook-b2511391168d.herokuapp.com/group-event?id=${groupid}&userid=${userid}`
 				);
 				const data = await response.json();
 				setEventData(data.data);

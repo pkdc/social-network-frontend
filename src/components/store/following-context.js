@@ -22,7 +22,7 @@ export const FollowingContext = React.createContext({
 
 export const FollowingContextProvider = (props) => {
 	const selfId = localStorage.getItem("user_id");
-	const followingUrl = `http://https://notfacebook-b2511391168d.herokuapp.com/user-following?id=${selfId}`;
+	const followingUrl = `https://notfacebook-b2511391168d.herokuapp.com/user-following?id=${selfId}`;
 
 	const [following, setFollowing] = useState([]);
 	const [followingChat, setFollowingChat] = useState([]);
@@ -48,7 +48,7 @@ export const FollowingContextProvider = (props) => {
 		// private chat notification list after login
 		// no need to sort coz the db is already returning items ordered by last-msg-time
 		fetch(
-			`http://https://notfacebook-b2511391168d.herokuapp.com/private-chat-item?id=${selfId}`
+			`https://notfacebook-b2511391168d.herokuapp.com/private-chat-item?id=${selfId}`
 		)
 			.then((resp) => resp.json())
 			.then((data) => {

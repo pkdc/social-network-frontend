@@ -8,7 +8,7 @@ function UserEvents({ userId, refresh }) {
 
 	useEffect(() => {
 		fetch(
-			`http://https://notfacebook-b2511391168d.herokuapp.com/group-event-member?userid=${userId}`
+			`https://notfacebook-b2511391168d.herokuapp.com/group-event-member?userid=${userId}`
 		)
 			.then((resp) => resp.json())
 			.then((data) => {

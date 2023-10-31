@@ -99,7 +99,7 @@ function Profile({ userId }) {
 		};
 
 		fetch(
-			"http://https://notfacebook-b2511391168d.herokuapp.com/user-follower",
+			"https://notfacebook-b2511391168d.herokuapp.com/user-follower",
 			reqOptions
 		)
 			.then((resp) => resp.json())
@@ -199,7 +199,7 @@ function Profile({ userId }) {
 			public: publicityNum,
 		};
 
-		fetch("http://https://notfacebook-b2511391168d.herokuapp.com/privacy", {
+		fetch("https://notfacebook-b2511391168d.herokuapp.com/privacy", {
 			method: "POST",
 			credentials: "include",
 			mode: "cors",
@@ -214,7 +214,7 @@ function Profile({ userId }) {
 
 	useEffect(() => {
 		fetch(
-			`http://https://notfacebook-b2511391168d.herokuapp.com/user-follow-status?tid=${userId}&sid=${currUserId}`
+			`https://notfacebook-b2511391168d.herokuapp.com/user-follow-status?tid=${userId}&sid=${currUserId}`
 		)
 			.then((response) => response.text())
 			.then((data) => {
@@ -238,7 +238,7 @@ function Profile({ userId }) {
 	//Get followers
 	useEffect(() => {
 		fetch(
-			`http://https://notfacebook-b2511391168d.herokuapp.com/user-follower?id=${userId}`
+			`https://notfacebook-b2511391168d.herokuapp.com/user-follower?id=${userId}`
 		)
 			.then((resp) => resp.json())
 			.then((data) => {
@@ -252,7 +252,7 @@ function Profile({ userId }) {
 	//Get following
 	useEffect(() => {
 		fetch(
-			`http://https://notfacebook-b2511391168d.herokuapp.com/user-following?id=${userId}`
+			`https://notfacebook-b2511391168d.herokuapp.com/user-following?id=${userId}`
 		)
 			.then((resp) => resp.json())
 			.then((data) => {
@@ -297,7 +297,7 @@ function Profile({ userId }) {
 		};
 
 		fetch(
-			"http://https://notfacebook-b2511391168d.herokuapp.com/user-follower",
+			"https://notfacebook-b2511391168d.herokuapp.com/user-follower",
 			reqOptions
 		)
 			.then((resp) => resp.json())
@@ -336,7 +336,7 @@ function Profile({ userId }) {
 		};
 
 		fetch(
-			"http://https://notfacebook-b2511391168d.herokuapp.com/close-friend",
+			"https://notfacebook-b2511391168d.herokuapp.com/close-friend",
 			cfOptions
 		)
 			.then((resp) => resp.json())

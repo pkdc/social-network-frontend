@@ -19,7 +19,7 @@ function GroupPost(props) {
 		showComments && setShowComments(false);
 
 		fetch(
-			`http://https://notfacebook-b2511391168d.herokuapp.com/group-post-comment?id=${e.target.id}`
+			`https://notfacebook-b2511391168d.herokuapp.com/group-post-comment?id=${e.target.id}`
 		)
 			.then((resp) => resp.json())
 			.then((data) => {
@@ -35,7 +35,7 @@ function GroupPost(props) {
 			body: JSON.stringify(createCommentPayloadObj),
 		};
 		fetch(
-			"http://https://notfacebook-b2511391168d.herokuapp.com/group-post-comment",
+			"https://notfacebook-b2511391168d.herokuapp.com/group-post-comment",
 			reqOptions
 		)
 			.then((resp) => resp.json())
@@ -53,7 +53,7 @@ function GroupPost(props) {
 		console.log("props id: ", props.id);
 		if (createCommentSuccessful) {
 			fetch(
-				`http://https://notfacebook-b2511391168d.herokuapp.com/group-post-comment?id=${props.id}`
+				`https://notfacebook-b2511391168d.herokuapp.com/group-post-comment?id=${props.id}`
 			)
 				.then((resp) => resp.json())
 				.then((data) => {

@@ -13,7 +13,7 @@ function GroupEvent(props) {
 
 	useEffect(() => {
 		fetch(
-			`http://https://notfacebook-b2511391168d.herokuapp.com/group-event-member?id=${props.id}`
+			`https://notfacebook-b2511391168d.herokuapp.com/group-event-member?id=${props.id}`
 		)
 			.then((resp) => resp.json())
 			.then((data) => {
@@ -78,18 +78,15 @@ function GroupEvent(props) {
 			eventid: parseInt(id),
 		};
 
-		fetch(
-			"http://https://notfacebook-b2511391168d.herokuapp.com/group-event-member",
-			{
-				method: "POST",
-				credentials: "include",
-				mode: "cors",
-				body: JSON.stringify(data),
-				headers: {
-					"Content-Type": "application/json",
-				},
-			}
-		).then(() => {
+		fetch("https://notfacebook-b2511391168d.herokuapp.com/group-event-member", {
+			method: "POST",
+			credentials: "include",
+			mode: "cors",
+			body: JSON.stringify(data),
+			headers: {
+				"Content-Type": "application/json",
+			},
+		}).then(() => {
 			// navigate.replace('/??')
 			console.log("posted");
 		});
@@ -107,18 +104,15 @@ function GroupEvent(props) {
 			eventid: parseInt(id),
 		};
 
-		fetch(
-			"http://https://notfacebook-b2511391168d.herokuapp.com/group-event-member",
-			{
-				method: "POST",
-				credentials: "include",
-				mode: "cors",
-				body: JSON.stringify(data),
-				headers: {
-					"Content-Type": "application/json",
-				},
-			}
-		).then(() => {
+		fetch("https://notfacebook-b2511391168d.herokuapp.com/group-event-member", {
+			method: "POST",
+			credentials: "include",
+			mode: "cors",
+			body: JSON.stringify(data),
+			headers: {
+				"Content-Type": "application/json",
+			},
+		}).then(() => {
 			// navigate.replace('/??')
 			console.log("posted");
 		});

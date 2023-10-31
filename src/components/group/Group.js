@@ -102,18 +102,15 @@ function Group(props) {
 
 		console.log(data);
 
-		fetch(
-			"http://https://notfacebook-b2511391168d.herokuapp.com/group-request",
-			{
-				method: "POST",
-				credentials: "include",
-				mode: "cors",
-				body: JSON.stringify(data),
-				headers: {
-					"Content-Type": "application/json",
-				},
-			}
-		).then(() => {
+		fetch("https://notfacebook-b2511391168d.herokuapp.com/group-request", {
+			method: "POST",
+			credentials: "include",
+			mode: "cors",
+			body: JSON.stringify(data),
+			headers: {
+				"Content-Type": "application/json",
+			},
+		}).then(() => {
 			// navigate.replace('/??')
 			console.log("group request posted");
 		});

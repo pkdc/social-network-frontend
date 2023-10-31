@@ -9,7 +9,7 @@ function useGet(url) {
 	useEffect(() => {
 		console.log("useGet: Starting fetch for", url);
 		setIsLoading(true);
-		fetch(`http://https://notfacebook-b2511391168d.herokuapp.com${url}`, {
+		fetch(`https://notfacebook-b2511391168d.herokuapp.com${url}`, {
 			credentials: "include",
 		})
 			.then((response) => {
