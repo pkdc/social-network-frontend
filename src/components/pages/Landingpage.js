@@ -12,7 +12,6 @@ const Landingpage = () => {
 	const [loginIsLoading, setLoginIsLoading] = useState(false);
 	const [error, setError] = useState(null);
 	const authCtx = useContext(AuthContext);
-
 	const [vantaEffect, setVantaEffect] = useState(null);
 	const vantaRef = useRef(null);
 
