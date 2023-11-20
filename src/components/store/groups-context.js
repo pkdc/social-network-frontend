@@ -1,39 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, {useState, useEffect} from "react";
 
 export const GroupsContext = React.createContext({
-	groups: [],
-	onNewGroupCreated: () => {},
+    groups: [],
+    onNewGroupCreated: () => {},
 });
 
 export const GroupsContextProvider = (props) => {
-	const [groupsList, setGroupsList] = useState([]);
+    const [groupsList, setGroupsList] = useState([]);
 
-	// get groups
-	const getGroupsHandler = () => {
-		const groupUrl = "https://notfacebook-b2511391168d.herokuapp.com/group";
-		fetch(groupUrl)
-			.then((resp) => resp.json())
-			.then((data) => {
-				console.log("group (context): ", data);
-				let [groupsArr] = Object.values(data);
-				setGroupsList(groupsArr);
-			})
-			.catch((err) => console.log(err));
-	};
+    // get groups
+    const getGroupsHandler = () => {
+        const groupUrl = "hhttps://notfacebook-b2511391168d.herokuapp.com/group";
+        fetch(groupUrl)
+        .then(resp => resp.json())
+        .then(data => {
+            console.log("group (context): ", data);
+            let [groupsArr] = Object.values(data); 
+            setGroupsList(groupsArr);
+        })
+        .catch(
+            err => console.log(err)
+        );
+    };
+    
+    useEffect(getGroupsHandler, []);
 
-	useEffect(getGroupsHandler, []);
-
-	return (
-		<GroupsContext.Provider
-			value={{
-				groups: groupsList,
-				// onlineGroups: onlineGroupsList,
-				onNewGroupCreated: getGroupsHandler,
-				// onOnline: groupOnlineHandler,
-				// onOffline: groupOfflineHandler,
-			}}
-		>
-			{props.children}
-		</GroupsContext.Provider>
-	);
+    return (
+        <GroupsContext.Provider value={{
+            groups: groupsList,
+            // onlineGroups: onlineGroupsList,
+            onNewGroupCreated: getGroupsHandler,
+            // onOnline: groupOnlineHandler,
+            // onOffline: groupOfflineHandler,
+        }}>
+        {props.children}
+        </GroupsContext.Provider>
+    );
 };

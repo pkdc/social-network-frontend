@@ -18,10 +18,9 @@ import AllUsers from "../posts/allUsers";
 import refreshImg from "../assets/refresh.svg";
 
 const PostsPage = () => {
-	const sessionUrl = "https://notfacebook-b2511391168d.herokuapp.com/session";
-	// const postUrl = "https://notfacebook-b2511391168d.herokuapp.com/post";
-	const postCommentUrl =
-		"https://notfacebook-b2511391168d.herokuapp.com/post-comment";
+	const sessionUrl = "hhttps://notfacebook-b2511391168d.herokuapp.com/session";
+	// const postUrl = "hhttps://notfacebook-b2511391168d.herokuapp.com/post";
+	const postCommentUrl = "hhttps://notfacebook-b2511391168d.herokuapp.com/post-comment";
 	const [postData, setPostData] = useState([]);
 	// const [noPost, setNoPost] = useState(true);
 	const [isLoadingPost, setIsLoadingPost] = useState(false);
@@ -33,7 +32,7 @@ const PostsPage = () => {
 	console.log(userId);
 	useEffect(() => {
 		setIsLoadingPost(true);
-		fetch(`https://notfacebook-b2511391168d.herokuapp.com/post?id=${userId}`)
+		fetch(`hhttps://notfacebook-b2511391168d.herokuapp.com/post?id=${userId}`)
 			.then((resp) => resp.json())
 			.then((data) => {
 				console.log("all post data: ", data);
@@ -74,15 +73,13 @@ const PostsPage = () => {
 			method: "POST",
 			body: JSON.stringify(createPostPayloadObj),
 		};
-		fetch(`https://notfacebook-b2511391168d.herokuapp.com/post`, reqOptions)
+		fetch(`hhttps://notfacebook-b2511391168d.herokuapp.com/post`, reqOptions)
 			.then((resp) => resp.json())
 			.then((data) => {
 				console.log("post success", data.success);
 				if (data.success) {
 					// render all posts
-					fetch(
-						`https://notfacebook-b2511391168d.herokuapp.com/post?id=${userId}`
-					)
+					fetch(`hhttps://notfacebook-b2511391168d.herokuapp.com/post?id=${userId}`)
 						.then((resp) => {
 							return resp.json();
 						})
