@@ -8,7 +8,7 @@ const [ eventData, setEventData ] = useState([])
 useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`hhttps://notfacebook-b2511391168d.herokuapp.com/group-event?id=${groupid}&userid=${userid}`);
+        const response = await fetch(`https://notfacebook-b2511391168d.herokuapp.com/group-event?id=${groupid}&userid=${userid}`);
         const data = await response.json();
         setEventData(data.data);
       } catch (error) {

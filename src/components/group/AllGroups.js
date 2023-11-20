@@ -9,7 +9,7 @@ const [groupData, setGroupData] = useState([])
     useEffect(() => {
       async function fetchData() {
         try {
-          const response = await fetch(`hhttps://notfacebook-b2511391168d.herokuapp.com/group`);
+          const response = await fetch(`https://notfacebook-b2511391168d.herokuapp.com/group`);
           const data = await response.json();
           console.log("fklgkdlf",data.data)
           setGroupData(data.data);

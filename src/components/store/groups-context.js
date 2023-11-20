@@ -10,7 +10,7 @@ export const GroupsContextProvider = (props) => {
 
     // get groups
     const getGroupsHandler = () => {
-        const groupUrl = "hhttps://notfacebook-b2511391168d.herokuapp.com/group";
+        const groupUrl = "https://notfacebook-b2511391168d.herokuapp.com/group";
         fetch(groupUrl)
         .then(resp => resp.json())
         .then(data => {
