@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# Social Network Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the frontend of a Facebook-like social network application built using React for the frontend and Golang for the backend.
 
-## Available Scripts
+It is hosting on https://socialnetwork123.netlify.app/
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+The application includes the following features:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- User registration and login with sessions and cookies for authentication
+- User profiles with public and private settings
+- Ability to follow/unfollow other users
+- Creation of posts and comments with privacy settings
+- Creation of groups with invitations and requests
+- Real-time private and group messaging using Websocket
+- Notifications for following requests, group invitations and requests, and group events using Websocket
+- Dockerized deployment with separate backend and frontend images
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Technologies Used
 
-### `npm test`
+- Frontend: React (JavaScript framework)
+- Backend: Golang (Go programming language)
+- Database: SQLite
+- WebSocket: Gorilla WebSocket package
+- Migration: golang-migrate package
+- Authentication: Sessions and cookies
+- Containerization: Docker
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Chat rules
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- The user should be able to send private messages to users that he/she is following
+- The user that the message was sent to, will receive the message instantly, if he/she is following the user that sent the message (shown under "Users You Are Following:") or if the user has a public profile (shown under "Other Users:")
+- if the user is not following the user that sent the message and if the user doesn't have a public profile, the message is stored the database, and it will be shown when he/she starts following the user that sent the message or if the user switches his/her profile to public 
+- If a public user switch his/her profile back to private, he/she can still continue on the existing conversations (even if he/she didn't send any messages)
+- Groups should have a common chat room, so if a user is a member of the group he/she should be able to send and receive messages to this group chat.
