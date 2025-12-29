@@ -44,7 +44,7 @@ export const WebSocketContextProvider = (props) => {
     };
 
     const connectSocket = () => {
-        const newSocket = new WebSocket("wss://notfacebook-b2511391168d.herokuapp.com/ws");
+        const newSocket = new WebSocket("wss://notfacebook-b2511391168d.herokuapp.com/ws/");
 
         newSocket.onopen = () => {
             console.log("ws connected");
