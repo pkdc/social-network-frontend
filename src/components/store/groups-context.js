@@ -10,19 +10,19 @@ export const GroupsContextProvider = (props) => {
 
     // get groups
     const getGroupsHandler = () => {
-        const groupUrl = "http://localhost:8080/group";
+        const groupUrl = "https://notfacebook-b2511391168d.herokuapp.com/group";
         fetch(groupUrl)
         .then(resp => resp.json())
         .then(data => {
             console.log("group (context): ", data);
-            let [groupsArr] = Object.values(data); 
+            let [groupsArr] = Object.values(data);
             setGroupsList(groupsArr);
         })
         .catch(
             err => console.log(err)
         );
     };
-    
+
     useEffect(getGroupsHandler, []);
 
     return (

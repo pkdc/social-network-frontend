@@ -10,7 +10,7 @@ import axios from "axios";
 //   useEffect(() => {
 //     console.log("useGet: Starting fetch for", url);
 //     setIsLoading(true);
-//     fetch(`http://localhost:8080${url}`)
+//     fetch(`https://notfacebook-b2511391168d.herokuapp.com${url}`)
 //       .then(response => {
 //         console.log("useGet: Received response:", response);
 //         return response.json();
@@ -41,7 +41,7 @@ import axios from "axios";
 //     useEffect(() => {
 //       console.log("useGet: ");
 //         setIsLoading(true)
-//         fetch(`http://localhost:8080${url}`)
+//         fetch(`https://notfacebook-b2511391168d.herokuapp.com${url}`)
 //         .then(response => {
 //           console.log("useGet: ",data);
 //           return response.json()
@@ -77,7 +77,7 @@ import axios from "axios";
 //         if (!url) return;
 //         const fetchData = async () => {
 //             setStatus('fetching');
-//             const response = await fetch(`http://localhost:8080${url}`);
+//             const response = await fetch(`https://notfacebook-b2511391168d.herokuapp.com${url}`);
 //             const data = await response.json();
 //             setData(data);
 //             setStatus('fetched');
@@ -91,7 +91,7 @@ import axios from "axios";
 
 // export default useGet;
 // /OR
-// //Using axios 
+// //Using axios
 const useGet = url => {
   const [data, setData] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
@@ -100,7 +100,7 @@ const useGet = url => {
   useEffect(() => {
     const fetchData = () => {
       axios
-        .get( `http://localhost:8080${url}`, { withCredentials: true })
+        .get( `https://notfacebook-b2511391168d.herokuapp.com${url}`, { withCredentials: true })
         .then(response => {
           setIsLoaded(true);
           setData(response.data);
@@ -116,4 +116,4 @@ const useGet = url => {
 };
 
 export default useGet;
-  
+

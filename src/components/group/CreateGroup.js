@@ -40,14 +40,14 @@ function CreateGroup(props) {
 
         setTitle('');
         setDescription('');
-    
-        fetch('http://localhost:8080/group', {
+
+        fetch('https://notfacebook-b2511391168d.herokuapp.com/group', {
             method: 'POST',
             credentials: "include",
             mode: "cors",
             body: JSON.stringify(data),
-            headers: { 
-                'Content-Type': 'application/json' 
+            headers: {
+                'Content-Type': 'application/json'
             }})
             .then(resp => resp.json())
             .then(data => {
@@ -59,8 +59,8 @@ function CreateGroup(props) {
                     props.onnewgroup()
                 }
             })
-            .catch(err => console.log(err))     
-            
+            .catch(err => console.log(err))
+
     }
 
     return <Card className={classes.card}>
@@ -69,9 +69,9 @@ function CreateGroup(props) {
         <input type="text" name="title" id="title" placeholder="Title" value={title} onChange={e => setTitle(e.target.value)} required></input>
         <textarea className={classes.content} name="description" id="description" placeholder="Description" value={description} onChange={e => setDescription(e.target.value)} ></textarea>
         <div className={classes.btn}>
-            <SmallButton>Create</SmallButton> 
+            <SmallButton>Create</SmallButton>
         </div>
-        
+
     </form>
     </Card>
 

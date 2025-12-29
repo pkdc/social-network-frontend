@@ -14,7 +14,7 @@ function GroupEvent(props) {
 
     useEffect(() => {
 
-        fetch(`http://localhost:8080/group-event-member?id=${props.id}`)
+        fetch(`https://notfacebook-b2511391168d.herokuapp.com/group-event-member?id=${props.id}`)
             .then(resp => resp.json())
             .then(data => {
                 setEventMemberData(data.data)
@@ -89,7 +89,7 @@ function GroupEvent(props) {
             eventid: parseInt(id),
         };
 
-        fetch('http://localhost:8080/group-event-member',
+        fetch('https://notfacebook-b2511391168d.herokuapp.com/group-event-member',
             {
                 method: 'POST',
                 credentials: "include",
@@ -116,7 +116,7 @@ function GroupEvent(props) {
             eventid: parseInt(id),
         };
 
-        fetch('http://localhost:8080/group-event-member',
+        fetch('https://notfacebook-b2511391168d.herokuapp.com/group-event-member',
             {
                 method: 'POST',
                 credentials: "include",

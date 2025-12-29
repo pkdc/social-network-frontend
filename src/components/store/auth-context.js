@@ -21,9 +21,9 @@ export const AuthContextProvider = (props) => {
   const [regSuccess, setRegSuccess] = useState(false);
   const [notif, setNotif] = useState([])
   const [errMsg, setErrMsg] = useState("");
-  const loginURL = "http://localhost:8080/login";
-  const regURL = "http://localhost:8080/reg";
-  const logoutURL = "http://localhost:8080/logout";
+  const loginURL = "https://notfacebook-b2511391168d.herokuapp.com/login";
+  const regURL = "https://notfacebook-b2511391168d.herokuapp.com/reg";
+  const logoutURL = "https://notfacebook-b2511391168d.herokuapp.com/logout";
 
   const usersCtx = useContext(UsersContext);
 
@@ -45,7 +45,7 @@ export const AuthContextProvider = (props) => {
       },
       body: JSON.stringify(regPayloadObj)
     };
-    
+
     // fetch(regURL, reqOptions)
     //   .then(resp => {
     //     if (!resp.ok) throw new Error ("Failed to Register");

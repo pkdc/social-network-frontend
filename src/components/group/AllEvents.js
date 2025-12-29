@@ -8,17 +8,17 @@ const [ eventData, setEventData ] = useState([])
 useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(`http://localhost:8080/group-event?id=${groupid}&userid=${userid}`);
+        const response = await fetch(`https://notfacebook-b2511391168d.herokuapp.com/group-event?id=${groupid}&userid=${userid}`);
         const data = await response.json();
         setEventData(data.data);
       } catch (error) {
         console.log(error);
       }
     }
-  
+
     fetchData();
   }, [refresh]);
-  
+
 
     return <div>
         {eventData && eventData.map((event) => (
@@ -26,7 +26,7 @@ useEffect(() => {
         key={event.id}
         id={event.id}
         date={event.date}
-        title={event.title}   
+        title={event.title}
         description={event.description}
         />
         ))}
