@@ -27,8 +27,8 @@ export const JoinedGroupContextProvider = (props) => {
     const [joinedGrps, setJoinedGrps] = useState([]);
     // const [joinedGrpsChat, setJoinedGrpsChat] = useState([]);
     const [requestedGroups, setRequestedGroups] = useState([]);
-    const joinedGroupingUrl = `https://notfacebook-b2511391168d.herokuapp.com/group-member?userid=${selfId}`;
-    const requestedGroupUrl = `https://notfacebook-b2511391168d.herokuapp.com/group-request-by-user?id=${selfId}`;
+    const joinedGroupingUrl = `http://localhost:8080/group-member?userid=${selfId}`;
+    const requestedGroupUrl = `http://localhost:8080/group-request-by-user?id=${selfId}`;
     const wsCtx = useContext(WebSocketContext);
 
     // get from db
@@ -76,7 +76,7 @@ export const JoinedGroupContextProvider = (props) => {
             try {
                 const promises = [
                     fetchGroupChatData(joinedGroupingUrl),
-                    fetchGroupChatData(`https://notfacebook-b2511391168d.herokuapp.com/group-chat-item?userid=${selfId}`),
+                    fetchGroupChatData(`http://localhost:8080/group-chat-item?userid=${selfId}`),
                 ];
                 const result = await Promise.all(promises);
 
@@ -154,7 +154,7 @@ export const JoinedGroupContextProvider = (props) => {
         joinGrpPayloadObj["groupid"] = joinGrpId;
         joinGrpPayloadObj["createdat"] = Date.now().toString();
         console.log("gonna send join grp req : ", joinGrpPayloadObj);
-        if (wsCtx.websocket !== null) wsCtx.websocket.send(JSON.stringify(joinGrpPayloadObj));
+        wsCtx.sendWebSocketMessage(joinGrpPayloadObj);
     };
 
     const InviteToJoinHandler = (grpid, InvitedUserId) => {
@@ -175,7 +175,7 @@ export const JoinedGroupContextProvider = (props) => {
         InviteToJoinPayloadObj["groupid"] = grpid;
         InviteToJoinPayloadObj["createdat"] = Date.now().toString();
         console.log("gonna send invite : ", InviteToJoinPayloadObj);
-        if (wsCtx.websocket !== null) wsCtx.websocket.send(JSON.stringify(InviteToJoinPayloadObj));
+        wsCtx.sendWebSocketMessage(InviteToJoinPayloadObj);
     };
 
     const joinHandler = (toJoinGrp, user) => {
@@ -223,7 +223,7 @@ export const JoinedGroupContextProvider = (props) => {
             groupChatNotiPayloadObj["sourceid"] = +selfId;
             groupChatNotiPayloadObj["groupid"] = groupId;
 
-            if (wsCtx.websocket !== null) wsCtx.websocket.send(JSON.stringify(groupChatNotiPayloadObj));
+            wsCtx.sendWebSocketMessage(groupChatNotiPayloadObj);
         }
         // move userId chat item to the top
         setJoinedGrps(prevJoinedGrps => [targetGroup, ...prevJoinedGrps.filter(joinedGrp => joinedGrp.id !== +groupId)]);
@@ -242,7 +242,7 @@ export const JoinedGroupContextProvider = (props) => {
         groupChatNotiPayloadObj["sourceid"] = +selfId;
         groupChatNotiPayloadObj["groupid"] = +groupId;
 
-        if (wsCtx.websocket !== null) wsCtx.websocket.send(JSON.stringify(groupChatNotiPayloadObj));
+        wsCtx.sendWebSocketMessage(groupChatNotiPayloadObj);
     };
 
     useEffect(() => {

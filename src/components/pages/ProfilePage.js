@@ -16,7 +16,7 @@ import classes from './layout.module.css';
 function ProfilePage() {
     const [commentData, setCommentData] = useState([]);
 
-    const sessionUrl = "https://notfacebook-b2511391168d.herokuapp.com/session";
+    const sessionUrl = "http://localhost:8080/session";
     // const { state } = useLocation();
     // const { id } = state;
     const params = useParams();
@@ -24,7 +24,7 @@ function ProfilePage() {
 
     // get comments
     useEffect(() => {
-        fetch("https://notfacebook-b2511391168d.herokuapp.com/post-comment")
+        fetch("http://localhost:8080/post-comment")
             .then(resp => resp.json())
             .then(data => {
                 // console.log("post page raw comment data: ", data)

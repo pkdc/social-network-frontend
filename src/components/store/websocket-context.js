@@ -3,6 +3,7 @@ import { UsersContext } from "./users-context";
 
 export const WebSocketContext = React.createContext({
     websocket: null,
+    sendWebSocketMessage: () => {},
     newPrivateMsgsObj: null,
     setNewPrivateMsgsObj: () => {},
     newGroupMsgsObj: null,
@@ -33,8 +34,17 @@ export const WebSocketContextProvider = (props) => {
 
     const usersCtx = useContext(UsersContext);
 
+    const sendWebSocketMessage = (msg) => {
+        if (socket && socket.readyState === WebSocket.OPEN) {
+            socket.send(JSON.stringify(msg));
+            return true;
+        }
+        console.warn('WebSocket not ready, message not sent:', msg);
+        return false;
+    };
+
     const connectSocket = () => {
-        const newSocket = new WebSocket("wss://notfacebook-b2511391168d.herokuapp.com/ws");
+        const newSocket = new WebSocket("ws://localhost:8080/ws");
 
         newSocket.onopen = () => {
             console.log("ws connected");
@@ -46,7 +56,7 @@ export const WebSocketContextProvider = (props) => {
             // setSocket(null);
 
             setTimeout(() => {
-                setSocket(connectSocket);
+                connectSocket();
                 console.log("ws connected again!");
             }, 1000);
         };
@@ -111,6 +121,8 @@ export const WebSocketContextProvider = (props) => {
     return (
         <WebSocketContext.Provider value={{
             websocket: socket,
+            sendWebSocketMessage: sendWebSocketMessage,
+
             newPrivateMsgsObj: newPrivateMsgsObj,
             setNewPrivateMsgsObj: setNewPrivateMsgsObj,
             newGroupMsgsObj: newGroupMsgsObj,
