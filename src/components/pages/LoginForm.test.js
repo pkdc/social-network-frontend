@@ -39,7 +39,7 @@ describe("Login Form compo", () => {
 		);
 		// Act
 		//Assert
-		const loginBtn = screen.getByRole("button", { name: /login/i });
+		const loginBtn = screen.getByRole("button", { name: /log in/i });
 		expect(loginBtn).toBeInTheDocument();
 	});
 

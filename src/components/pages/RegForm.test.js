@@ -50,7 +50,7 @@ describe("Reg Form Compo", () => {
         );
         // Act
         //Assert
-        const regBtn = screen.getByRole("button", { name: /register/i});
+        const regBtn = screen.getByRole("button", { name: /create account/i});
         expect(regBtn).toBeInTheDocument();
     });
 
@@ -63,7 +63,7 @@ describe("Reg Form Compo", () => {
         );
         // Act
         // Assert
-        const loginLinkEl = screen.getByRole("link", { name: /Login/i });
+        const loginLinkEl = screen.getByRole("link", { name: /log in/i });
         expect(loginLinkEl).toBeInTheDocument();
     });
 });

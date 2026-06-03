@@ -1,18 +1,55 @@
 @import "../var.css";
 
-/* .input-container {
-    margin: 1.25rem 0;
-} */
-
 .input {
-    background-color: rgba(255, 255, 255, 0.602);
-    outline: solid var(--ultra-violet, purple);
-    border: 0.1rem solid transparent;
-    padding: 1.25rem;
-    border-radius: 0.6rem;
-    /* width: 75%; */
+	font-family: var(--font);
+	font-size: 0.92rem;
+	color: var(--nf-ink);
+	background: var(--nf-surface);
+	border: 1.5px solid var(--nf-line);
+	border-radius: var(--r-md);
+	padding: 12px 14px;
+	width: 100%;
+	box-sizing: border-box;
+	outline: none;
+	transition: border-color 0.16s ease, box-shadow 0.16s ease,
+		background 0.16s ease;
+}
+
+.input::placeholder {
+	color: var(--nf-muted);
 }
 
 .input:focus {
-    border: 0.1rem solid var(--ultra-violet, purple);
+	border-color: var(--nf-violet);
+	box-shadow: 0 0 0 4px rgba(82, 72, 156, 0.12);
+	background: #fff;
+}
+
+/* Password field: leave room for the eye toggle */
+.input--pw {
+	padding-right: 42px;
+}
+
+.pw-wrap {
+	position: relative;
+	display: block;
+}
+
+.pw-eye {
+	position: absolute;
+	right: 12px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0;
+	border: none;
+	background: transparent;
+	color: var(--nf-muted);
+	cursor: pointer;
+}
+
+.pw-eye:hover {
+	color: var(--nf-violet);
 }

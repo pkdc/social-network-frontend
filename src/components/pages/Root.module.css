@@ -1,0 +1,7 @@
+@import "../var.css";
+
+/* Offsets page content below the fixed TopNav so the bar
+   doesn't overlap the top of every logged-in page. */
+.content {
+    padding-top: var(--nav-height);
+}

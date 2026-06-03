@@ -1,21 +1,40 @@
 @import "../var.css";
 
 .lg-btn {
-    background-color: var(--ultra-violet-0, purple);
-    color: var(--antiflash-white, white);
-    padding: 1.25rem;
-    cursor: pointer;
-    border: none;
-    border-radius: 2.2rem;
-    /* width: 75%; */
-    font-size: 1.25rem;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    /* margin: 1.6rem 0; */
-    /* transition: color 0.3s ease; */
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	padding: 12px 22px;
+	border-radius: var(--r-md);
+	font-family: var(--font);
+	font-size: 0.92rem;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	cursor: pointer;
+	border: none;
+	text-decoration: none;
+	background: var(--nf-violet);
+	color: #fff;
+	box-shadow: 0 2px 14px rgba(82, 72, 156, 0.32), 0 1px 3px rgba(82, 72, 156, 0.2);
+	transition: transform 0.18s var(--ease), box-shadow 0.18s var(--ease),
+		background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
 
 .lg-btn:hover {
-    background-color: var(--ultra-violet, purple);;
+	background: var(--nf-violet-600);
+	box-shadow: 0 4px 22px rgba(82, 72, 156, 0.42);
+	transform: translateY(-1px);
 }
 
+.lg-btn:active {
+	transform: scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.lg-btn,
+	.lg-btn:hover,
+	.lg-btn:active {
+		transform: none;
+	}
+}
