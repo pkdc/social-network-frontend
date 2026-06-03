@@ -1,12 +1,19 @@
 @import "../var.css";
 
 .label-container {
-    margin: 1.25rem 0;
+	display: block;
 }
 
 .label {
-    color: var(--ultra-violet, purple);
-    font-size: 1.5rem;
-	font-weight: 700;
-    padding: 1.25rem;
+	display: block;
+	color: var(--nf-ink-2);
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+}
+
+.optional {
+	color: var(--nf-muted);
+	font-weight: 500;
+	font-size: 0.72rem;
 }
