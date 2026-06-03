@@ -15,7 +15,7 @@ nav {
     /* list-style: none; */
     /* padding: 20px; */
     padding: 0px 20px 0px 20px;
-    height: 60px;
+    height: var(--nav-height);
     background-color: var(--seasalt);
     border-bottom: 2px solid rgba(181, 181, 181, 0.388);;
 }

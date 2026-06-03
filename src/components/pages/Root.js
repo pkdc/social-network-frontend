@@ -7,6 +7,7 @@ import { FollowingContextProvider } from "../store/following-context";
 import { WebSocketContextProvider } from "../store/websocket-context";
 import { GroupsContextProvider } from "../store/groups-context";
 import { JoinedGroupContextProvider } from "../store/joined-group-context";
+import styles from "./Root.module.css";
 
 const Root = () => {
     // console.log("Root");
@@ -31,7 +32,9 @@ const Root = () => {
                         <JoinedGroupContextProvider>
                             <TopNav onClickChatIcon={chatIconClickHandler}/>
                             <ChatSidebar showChat={showChat} toggleChatSidebar={chatbarClickHandler}/>
-                            <Outlet/>
+                            <main className={styles["content"]}>
+                                <Outlet/>
+                            </main>
                         </JoinedGroupContextProvider>
                     </GroupsContextProvider>
                 </FollowingContextProvider>

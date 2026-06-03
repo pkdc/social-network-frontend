@@ -66,6 +66,9 @@
 
     /* ---- Type ---- */
     --font: "DM Sans", system-ui, sans-serif;
+
+    /* ---- Layout / metrics ---- */
+    --nav-height: 60px; /* fixed TopNav height; content offsets by this */
 }
 
 
