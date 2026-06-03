@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import Logo from "../UI/Logo";
 import NetCanvas from "../UI/NetCanvas";
 import styles from "./AuthLayout.module.css";
@@ -20,7 +22,9 @@ const AuthLayout = ({ heroTitle, heroSub, centerMobile = false, children }) => {
 				<aside className={styles.brand}>
 					<NetCanvas color="#b9b1e8" density={58} />
 					<div className={styles.brandContent}>
-						<Logo className={styles.brandLogo} />
+						<Link to="/" className={styles.brandLogoLink} aria-label="Back to home">
+							<Logo className={styles.brandLogo} />
+						</Link>
 
 						<div className={styles.brandMiddle}>
 							{/* desktop brand copy */}

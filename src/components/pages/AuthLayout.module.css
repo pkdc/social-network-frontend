@@ -41,6 +41,24 @@
 	height: 100%;
 }
 
+/* wordmark doubles as a "back to landing page" link */
+.brandLogoLink {
+	display: inline-flex;
+	align-self: flex-start;
+	text-decoration: none;
+	border-radius: 6px;
+	transition: opacity 0.15s ease;
+}
+
+.brandLogoLink:hover {
+	opacity: 0.8;
+}
+
+.brandLogoLink:focus-visible {
+	outline: 2px solid #fff;
+	outline-offset: 4px;
+}
+
 .brandHeadline {
 	color: #fff;
 	font-size: 1.9rem;

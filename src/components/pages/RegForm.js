@@ -144,11 +144,11 @@ const RegForm = () => {
                     <div className={af.row2}>
                         <div className={af.field}>
                             <FormLabel htmlFor="fname">First Name</FormLabel>
-                            <FormInput type="text" name="fname" id="fname" placeholder="Homer" value={enteredFName} onChange={fNameChangeHandler} />
+                            <FormInput type="text" name="fname" id="fname" placeholder="John" value={enteredFName} onChange={fNameChangeHandler} />
                         </div>
                         <div className={af.field}>
                             <FormLabel htmlFor="lname">Last Name</FormLabel>
-                            <FormInput type="text" name="lname" id="lname" placeholder="Simpson" value={enteredLName} onChange={lNameChangeHandler} />
+                            <FormInput type="text" name="lname" id="lname" placeholder="Doe" value={enteredLName} onChange={lNameChangeHandler} />
                         </div>
                     </div>
                     <div className={af.field}>
